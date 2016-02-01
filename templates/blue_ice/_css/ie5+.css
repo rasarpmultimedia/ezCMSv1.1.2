@@ -1,0 +1,51 @@
+/* CSS Document */
+
+/* IE5+ Hacks \*/
+
+body{ 
+  behavior:url("stylesheets/csshover3.htc");
+  font-size:1em;  border:5px solid green;
+  width: auto;
+  }
+
+* html #content{
+    border:1px solid red;
+	 width:99%; 
+	}
+* html #leftpanel{
+	border:1px solid red;
+	width:23%; padding:2px;
+	}
+* html #rightpanel{
+	border:1px solid red;
+	width:22%; 
+}
+/*Navigation  Hacks */
+* html #menu_wrapper{ 	width:100%; margin:0 auto; }
+* html #navigation li{ width:10em;}
+* html #navigation li:hover{ display:block;}
+* html #navigation a{ width:10.5em; border-top: none;}
+* html ul#navigation ul a{ width:12em;background: url(../images/menu_hover.png) repeat-x;
+					font-size: 0.8em; 
+					text-align: left; 
+}
+* html #navigation ul ul{ left:87%;  top:0; }
+/*Logo and Sub Header Hack */
+*html #subheader{ width:80%; height: auto;}
+*html .ad_area{ width:80%; height:100px;}
+*html .authen_area{width:19.8%; height:100px; }
+ /*Logo and Sub Header Hack */	
+*html .flex_box{}
+/*Tab links Hack */	
+*html #tabs li { width:6em;  }
+*html #tabs li a { width:6em; padding:0.04em 0.03em 0.04em 0.03em;}
+*html #tabs li a:hover{ border-bottom:none;}
+*html .tabcontainer{  }
+/*Tab links Hack  Ends*/
+/** IE Hack  Admin css*/	
+* html #admwrapper{width:410px;}
+* html #admboxwrapper{ width: auto;}
+/** IE Hack  Admin css ends*/	
+/** Form Hacks*/
+
+/* IE5+ Hacks */

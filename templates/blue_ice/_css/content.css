@@ -1,0 +1,200 @@
+/* CSS Document 
+ * lightskyblue	#87CEFA	135,206,250
+ * lightblue	#ADD8E6	173,216,230
+ * dodgerblue	#1E90FF	30,144,255
+ * navy			#000080	0,0,128
+ * powderblue	#B0E0E6	176,224,230
+ * royalblue	#4169E1	65,105,225
+ * skyblue		#87CEEB	135,206,235
+ * steelblue	#4682B4	70,130,180
+ * royalblue	#4169E1	65,105,225
+ * silver 		#C0C0C0 192,192,192
+ * */
+
+hr{ border: 1px solid lightblue; clear: left;}
+/*Content tab setting */
+/*Content tab setting */
+#tabs{ color:#FFF; font:Verdana, Geneva, sans-serif; font-size:14px;}
+#tabs li {width:8em;list-style:none; display:inline; padding:0;  }
+#tabs li a{ width:8em; padding:0.08em 0.1em 0.08em 0.1em;
+              color: #FEFEFE; border:1.5px solid #09F; border-bottom:none;
+			  background-image:url(../_images/tab_bkg.png); 
+		      background-position:center; 
+		      background-repeat:repeat-x;
+			  text-align:center;
+		  }
+#tabs li a:hover{ text-decoration:none; 
+				  color: #09F; 
+				}
+#tabs a.selected{ background:#FFF; color: #09F; 
+				  font-weight:bold;
+				  padding:0.1em 0.1em 0.1em 0.1em; 
+				  height:0.9em;
+}
+.tab_wrapper{ width:99%; margin: 2px auto; }
+.tab_content{ padding:3px; border:1.5px solid  #09F; }
+.tab_content.hide{ display:none;}
+
+.tabitem_list{
+	margin: 0 auto;
+	margin-left: 0.5em;
+	padding: 0.2em;
+}
+.tabitem_list > li{
+	text-align:left;
+	list-style-type: none;
+}
+.tabitem_list a{
+	text-decoration:none;
+	padding: 0.3em;
+}
+/* content styles begins here*/	
+.adplaceholder{
+	width:99%;
+	margin: 5px auto;
+	border: 1px solid lightblue;
+}
+
+/* Home page flex box styles  classes */
+/* Page Information Styles */
+.livebox{
+	margin: 0.3px;
+}
+.livebox ul.quickref,ul.currentinfo{
+	margin: 0.1px;
+	list-style: none;
+}
+
+/*Page info class */
+#page{ 
+   margin: 0 auto; 
+   padding: 3px 0px;
+   display:block;
+   line-height:1.4;
+    border-bottom: 2px solid #ADD8E6;
+   overflow: hidden;
+}
+/*Comment styles*/
+#comment_area{
+ clear:both;
+ border-top: 2px solid #ADD8E6;
+}
+#comment_area a{
+	display:inline;
+}	
+#viewcomments{
+	display:block;
+}
+#commentform{ 
+	display:block;
+}
+#viewcommentslink{
+	
+}
+#addcommentlink{ 
+	display:block;
+}
+/*Comment styles ends*/	
+.flex_box{ 
+	width:99%;
+	margin: 0 auto;
+	/*border: 1px solid lightblue;*/
+	display:block;
+}
+.flex_box:last-child{
+	margin-bottom: none;
+}
+.flex_box ol{
+	  margin: 0 auto;
+	  padding:3px 4px 2px; 
+	  list-style: none; 
+	  display:block; 
+	  overflow: hidden;
+}
+.flex_box > h3{
+	 background: url(../_images/h2bkg.png) repeat-x; 
+	 padding:5px; 
+	 color: rgb(0,0,128); 
+}
+.flex_box > h3 span{ 
+	      float: right; 
+}
+.flex_box li a{
+	  cursor: pointer; 
+	  padding: 0.2em 0.1em; 
+}
+.flex_box li > div{
+	       padding: 0.05em 0.4em;
+}
+.flex_box li h3{
+		padding:0.2em;
+		clear:left;
+}
+
+.flex_box div img{
+	       width:20%;
+	       float:left;
+	       margin:0 0.6em 0.3em 0;
+}
+/* List items */
+.list_ul{
+	padding-left: 25px;
+	padding-bottom:15px;
+	line-height:1.5;
+	list-style-type:circle;
+}
+/* Style to show list items for jobs */
+.showlist_items{
+ list-style:none;
+ background-color: ivory;
+ border: 1px solid skyblue;
+ margin:0 auto;
+ padding: 1%;
+ overflow: hidden;
+}
+.showlist_items h3{
+	color:#000080;
+	border-bottom: 2px solid navy;
+	width:100%;
+	margin: 0.1em 0;
+	display:block;
+}
+.showlist_items li > h3:first-child{
+	margin-top:0;
+} 
+.showlist_items h4{
+	color:grey;	
+	text-align:right;
+	width: 150px;
+}
+.showlist_items li p{
+    width:400px;
+}
+.showlist_items h4,.showlist_items li p{
+   border: 1px solid silver;
+   position:relative;
+   float: left;
+   margin:.1em 0 .2em 0;  
+   padding:0.5em;
+   min-height: 20px;	
+}
+
+.showlist_items.clearit{
+	clear:both;
+}
+/* Style to show list items for jobs and others ends */
+/* Class current updates on left side css */
+			
+.footerlist{
+	 width:99%; 
+	 list-style:none;
+	 margin: 0 auto;  
+	 padding: 20px 10px 15px 10px;
+}
+.footerlist li{
+	  display: inline-block;
+	  display: inline;
+}
+
+.footer_text{text-align:center; color:white;}
+

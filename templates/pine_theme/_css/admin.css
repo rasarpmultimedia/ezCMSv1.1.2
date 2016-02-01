@@ -1,0 +1,188 @@
+/* CSS for Admin Menu items */
+
+#admin_menu_wrap{ 
+	border:1px solid #006;
+	width:100%; 
+	border:0;
+	background-image:url(../_images/menubkg.png);background-repeat:repeat;
+}		  
+/**Styling level 0 admin_nav list */
+#admin_nav{ 
+	width: 95%;
+	margin: 0 auto; 
+	border:0;
+	overflow: hidden;
+}
+#admin_nav li{ 
+	float:left;
+	list-style:none;
+}
+
+#admin_nav a{ 
+	width: auto;
+	padding:0.5em 0.6em; 
+	display:block;
+	opacity:0.95; 
+}
+#admin_nav a{ 
+	 color:#FFF; 
+	 font-size:1.5em;   
+	 font-family: "Agency FB", Arial, Georgia;
+	 font-weight:bolder;
+     text-align: center;
+	 text-decoration:none;
+}
+#admin_nav a:hover{color: #F90;}
+
+/**Styling level 0 and 1 admin_nav list - Javascript Disabled */
+/**-- Dropdown list -- **/
+/**
+Positioning the ul and li for pop up and dropdowns
+*/
+#admin_nav ul{float:none;}
+#admin_nav ul li{width:11em;}
+#admin_nav ul a{ width:12.4em; 
+	w\idth:12.7em;
+	background: url(../../admin/images/menu_hover.png) repeat-x;
+	font-size: 0.8em; 
+	text-align: left; 
+} 
+#admin_nav li{ position: relative; z-index:30; }
+#admin_nav ul{ position: absolute;}
+#admin_nav ul ul{ left:95%; 
+	           top:0; 
+}
+/*
+Hiding and Revealing left:-99999px;
+*/
+#admin_nav ul, 
+#admin_nav li:hover ul ul,
+#admin_nav ul li:hover ul ul
+{ display:none;}
+
+#admin_nav li:hover ul,
+#admin_nav ul li:hover ul,
+#admin_nav ul ul li:hover ul
+{ display:block; }
+
+/* Adm Nav Search**/
+#adm_searchbox{
+	float:right;
+	position:absolute;
+	right:-117px;
+	background:#03F;
+	top: 20px;
+}
+
+/**
+Admin Select Option List
+*/
+#dashboard{
+	width:70%;
+	margin:0 auto;
+	padding:0.4em; 
+	list-style:none; 
+}
+#dashboard li h2{ 
+	font-size:16px;
+color: rgb(70,130,180);/*#4169E1 royal blue*/
+	background: #EBEBEB;
+	padding:1em;
+	text-align:left;
+}
+#dashboard li,#dashboard a{ 
+	font-family: 'Proxima Nova Rg';
+    background:#ede0d5;
+	display:block; 	
+}
+#dashboard a{ 	  
+	border-top: 1px ivory solid;
+	text-decoration:none;
+	color:#990033;  
+	text-align:left; 
+	padding:0.5em 0.6em;
+	text-transform:uppercase;
+}
+/* Styles for Left Side Menu list (Admin Area and Public Content)*/
+.asideleft_menu{
+	width:95%;
+	margin:0 auto;
+	list-style: none;  
+	overflow: hidden; 
+	border: 1px solid #990033;
+}
+.asideleft_menu li{ 
+
+	border-bottom:1px solid #990033;
+}
+
+.asideleft_menu h2,
+.asideleft_menu h3{
+	 font-size: .8em;
+	 width:100%;  
+}
+
+.asideleft_menu h2,
+.asideleft_menu a{
+	 line-height:0.5em;
+	 padding: 0.9em 0.5em;
+	 display:block;
+	 font: normal 1em/0.5em 'Proxima Nova Rg';
+	 background-color:#ede0d5;
+}
+.asideleft_menu a:link,
+.asideleft_menu a:visited,
+.asideleft_menu a:active{
+	color:rgb(65,105,225,.5);
+}
+.asideleft_menu li:last-child{
+     border-bottom:none;
+	}
+.asideleft_menu a:hover{
+     text-decoration:none;
+     background-color: rgba(192,192,192,.5)
+	}
+/* Contents, Headers and Subheaders Styles */
+
+/** View Table in admin area*/
+#admdetail{margin-bottom: 5px;}
+
+#admdetail h2{ 
+			   background-color: #990033;
+			   border:5px solid #ede0d5;
+			   border-radius:9px;
+			   color:#fff;
+			   padding: 10px;
+			   
+}
+#admdetail table{ 
+			width:100%; 
+			table-layout:auto; 
+			border-collapse:collapse;
+			border: 1px #EBEBEB solid; 
+}
+   
+#admdetail table th{ 
+			   background-color: #ede0d5;
+			   color:#990033;
+}
+
+#admdetail table th{ 
+			text-align:center; 
+			font-weight:bold;
+}
+#admdetail table th[colspan]{ text-align:right;}
+#admdetail table th[scope]{ text-align:left;}
+#admdetail table th, 
+#admdetail table td { 
+	width:auto;
+	padding:5px 3px; 
+    border: 1px solid #990033;
+}
+			  
+#admdetail table td a{ 
+	color:#990033;
+	font-size: 0.8em; 
+	padding:0;
+}
+/** View Table in admin area ends*/

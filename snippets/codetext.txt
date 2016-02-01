@@ -1,0 +1,184 @@
+
+=================================================================================================================
+For Navigation;
+/*
+  intialize page content here
+ * $make_link = GenerateUrl::buildLink($url, $addfile, $linktext, $param_list)
+ * */
+  $navigation = new Navigation("sitemenu");
+  $public_menu = $navigation::findAllRecords("ORDER BY Position");
+  $subnav      = new SubNavigation("submenu");
+  $subnav_menu = $subnav::findAllRecords("ORDER BY Id");
+  //var_dump($subnav_menu);
+    foreach($public_menu as $pmenu){
+    	 $make_link = GenerateUrl::buildLink("pages","index.php",$pmenu->Nav_name,
+	 "action=view,target={$pmenu->Nav_name},pgpos={$pmenu->Position},rnd=".random_chars(20));
+	  $output ="<li>$make_link";
+	   if(!empty($subnav_menu)){
+	   	$output .="<ul class='subnav'>";
+	    foreach($subnav_menu as $smenu){
+	   	//submenu list hear
+	   	 if(($pmenu->Nav_level === $smenu->Sub_navlevel) && ($pmenu->Id === $smenu->Nav_id)){
+	   	 	$msub_link = GenerateUrl::buildLink("pages","index.php",$smenu->Sub_navname,
+	 		"action=view,target={$smenu->Sub_navname},pgpos={$pmenu->Position},rnd=".random_chars(20));
+			$output .="<li>$msub_link</li>";
+	   	  }
+	    }
+	    $output .="</ul>";
+	  }
+	  $output .= "</li>";	
+}
+    getPublicNavigation();
+//page cont navigation
+ $page_nav = <<<_HTMLDOC
+ <ul id='navigation'>
+ <li><a href='index.php'>Home</a></li> 
+  $output
+ </ul>
+_HTMLDOC;
+======================================================================================================
+<?php
+if(isset($_POST["Save"])){
+   //form processing 
+   //form validation
+	$errors = array();
+	
+     //if no errors are found
+	 if(count($errors)==0){
+	// put database codes here    
+	 }else{
+	 	// Display Error Msg Here
+		  if(count($errors)== 1){
+		  	$msg = "There is ".count($errors)." error in the form field";
+		  }elseif(count($errors) > 1){
+		  	$msg = "There are ".count($errors)." errors in the form fields";
+		  }
+	 } 
+}
+?>
+=====================================================================
+<div class="flex_box">
+<h3>Latest <?php echo $pagecat->Catname ?></h3>
+<?php
+foreach( $pagedesc as $pagecap):
+?> 
+<ul><li>
+ <h4><a href="<?php echo "pages/displaypg.php?page={$pagecap->Pgid}{$pagination->addparam}"?>"><?php echo $pagecap->Title ?></a>
+ <p class="dateposted">Date posted: <?php echo formatDate($pagecap->Lastmodified,"datetime_ampm")?></p></h4>
+ <p class="clearleft"> 
+<?php 
+  	$imgdir_path = IMG_PATH."/pg_images/";
+   	$thumbdir    = $imgdir_path."thumb/";
+	if(@$image->buildThumbImage($pagecap->Pgid,$thumbdir)){
+    echo bbcode_parser(getCaption($pagecap->Content,0,290));
+	@$image->buildThumbImage($pagecap->Pgid,$thumbdir);
+	}else{
+		 $content = bbcode_parser($pagecap->Content);
+		echo getCaption($content,0,290);
+		
+	}
+?>
+<br /><a href="<?php echo "pages/displaypg.php?page={$tlist->Pgid}{$pagination->addparam}"?>"> More Story &raquo;</a></p><hr/>
+</li></ul>
+<?php endforeach; ?>
+</div>
+===================================================================
+Addmore page codes here
+<!--Flex box starts here-->
+<?php
+ if($findpage){
+ $sel_category = Category::findAllData("ORDER BY Position");
+ foreach($sel_category as $category):
+?>
+<div class="flex_box">
+<h3>Latest <?php echo $category->Catname ?></h3>
+<?php
+foreach( $pagedesc as $pagecap):
+ if($category->Position == $pagecap->Position):
+?> 
+<ul><li>
+ <h4><a href="<?php echo "pages/displaypg.php?page={$pagecap->Pgid}{$pagination->addparam}"?>"><?php echo $pagecap->Title ?></a>
+ <p class="dateposted">Date posted: <?php echo formatDate($pagecap->Lastmodified,"datetime_word")?></p></h4>
+ <p class="clearleft"> 
+<?php 
+  	$imgdir_path = IMG_PATH."/pg_images/";
+   	$thumbdir    = $imgdir_path."thumb/";
+	if(@$image->buildThumbImage($pagecap->Pgid,$thumbdir)){
+    echo bbcode_parser(getCaption($pagecap->Content,0,285));
+	@$image->buildThumbImage($pagecap->Pgid,$thumbdir);
+	}else{
+		$content = bbcode_parser($pagecap->Content);
+		echo getCaption($content,0,285);		
+	}
+?>
+<br /><a href="<?php echo "pages/displaypg.php?page={$pagecap->Pgid}{$pagination->addparam}"?>"> More Story &raquo;</a></p>
+<hr /></li></ul>
+<?php 
+	endif;
+  endforeach; 
+?>
+</div>
+<?php endforeach; 
+}
+?>
+<!--Flex box end here-->
+===================================================================
+Page Generator
+===================================================================
+<?php
+include_once"../includes/initialize.inc.php";
+$title = "PowerCMS::title here::****::";
+$nav = getPublicNavigation();
+$aside_left = <<<"_ASIDELEFT"
+  //Aside adverts and more
+_ASIDELEFT;
+
+$aside_right = <<<"_ASIDERIGHT"
+// Another Aside adverts and more
+_ASIDERIGHT;
+//page contents starts here
+$contents = <<<"_PAGECONTENTS"
+//put contents here
+ </div>
+_PAGECONTENTS;
+$template->getTempaltePath ="../".TEMPLATE_DIR.SITE_TEMPLATE."/_html/sub_layout.tpl.htm";
+$template->getPage($title,$nav,$aside_left,$contents,$aside_right);
+===================================================================
+Pecies of codes for reuse
+===================================================================
+
+ <!--Flex box  here-->
+<?php
+ $sel_category = Category::findAllData("ORDER BY Position");
+  foreach($sel_category as $category):
+?>
+<div class="flex_box">
+<h3>Latest <?php echo $category->Catname ?></h3>
+<?php
+foreach( $pagedesc as $pagecap):
+	if($category->Position == $pagecap->Position):
+?> 
+<ul><li>
+ <h4><a href="<?php echo "pages/displaypg.php?page={$pagecap->Pgid}{$pagination->addparam}"?>"><?php echo $pagecap->Title ?></a>
+ <p class="dateposted">Date posted: <?php echo formatDate($pagecap->Lastmodified,"datetime_ampm")?></p></h4>
+ <p class="clearleft"> 
+<?php 
+  	$imgdir_path = IMG_PATH."/pg_images/";
+   	$thumbdir    = $imgdir_path."thumb/";
+	if(@$image->buildThumbImage($pagecap->Pgid,$thumbdir)){
+    echo bbcode_parser(getCaption($pagecap->Content,0,285));
+	@$image->buildThumbImage($pagecap->Pgid,$thumbdir);
+	}else{
+		 $content = bbcode_parser($pagecap->Content);
+		echo getCaption($content,0,285);
+		
+	}
+?>
+<br /><a href="<?php echo "pages/displaypg.php?page={$tlist->Pgid}{$pagination->addparam}"?>"> More Story &raquo;</a></p><hr/>
+</li></ul>
+<?php 
+	endif;
+  endforeach; 
+?>
+</div>
+<?php endforeach; ?>

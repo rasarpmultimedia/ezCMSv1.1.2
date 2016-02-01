@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document 
+ * dodgerblue	#1E90FF	30,144,255
+ * navy		#000080	0,0,128
+ * powderblue	#B0E0E6	176,224,230
+ * royalblue	#4169E1	65,105,225
+ * skyblue	#87CEEB	135,206,235
+ * steelblue	#4682B4	70,130,180
+ * royalblue	#4169E1	65,105,225
+ * */
+html,body,div,nav, section,article,
+table,ol,ul,dl,dt,ul,
+h1,h2,h3,h4,h5,h6,p{margin:0; padding:0;}
+
+@font-face {
+  font-family: 'Proxima Nova Rg';
+
+  src: url('../_fonts/proximanova-regular-webfont.eot');
+  src: url('../_fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'), 
+  url('../_fonts/proximanova-regular-webfont.woff') format('woff'), 
+  url('../_fonts/proximanova-regular-webfont.ttf') format('truetype'), 
+  url('../_fonts/proximanova-regular-webfont.svg#proxima_nova_rg') format('svg');
+}
+
+body{
+	font-family: 'Proxima Nova Rg' !important;
+	color:#000! important;
+	text-align:justify !important;
+
+}
+#wrapper{
+	border:1px solid #006; 
+	border-top:none; 
+	border-bottom:none;
+	border-top:none; 
+	background: url(../_images/content_bg.jpg);
+}
+#header{
+	background:#990033;
+	margin:0 auto;
+	border:0; 
+	height:120px;
+	position:relative;
+}
+
+#banner_rotator {
+	clear:both;
+	background:#ede0d5;
+	margin: 0  !important;
+	border: 2px  #FFF solid; 
+	height:100px;
+}
+#menu_wrap{
+	border:1px solid #006;
+	width:100%; 
+	border:0;
+	background-color:#ede0d5 !important;
+	clear: both;
+}
+div.adsection{
+	border:1px solid #f0f0f0;
+
+}
+a,a:link{ 
+	color:#03F; 
+    text-decoration: none;
+}
+a:active{ color:#06F;
+}
+a:hover{ text-decoration: underline;
+}
+
+#aside_left{
+	width:19%;
+	position:relative; 
+	margin-right:1.5%; 
+	padding: 0.5% .5% .5% .5%;
+	float:left; 
+	/*border: 1px solid green;*/
+}
+#aside_right{
+	width:18%;
+	position:relative;
+	margin-left:1%; 
+	padding: 0.5% 1% 0.5% 1%;
+	float:right; 
+	/*border: 1px solid red;*/
+}
+#content{
+	width:57%; 
+	position:relative;
+	padding:.5%;
+	margin: 0 auto;
+	min-height: 400px;
+	display:block;
+	/*border: 1px solid rgb(30,144,255);*/
+	 
+	border-bottom: none;
+}
+#footer{
+	clear:both;  
+	margin: 0 auto;
+	padding-top:15px;
+	padding-bottom:15px;
+	background:#002366;
+	border:0; /**/
+	border-bottom:10px solid #990033;
+}

@@ -1,0 +1,164 @@
+/** CSS Document 
+ * lightskyblue #87CEFA	135,206,250
+ * lightblue	#ADD8E6	173,216,230
+ * dodgerblue	#1E90FF	30,144,255
+ * navy		#000080	0,0,128
+ * powderblue	#B0E0E6	176,224,230
+ * royalblue	#4169E1	65,105,225
+ * skyblue	#87CEEB	135,206,235
+ * steelblue	#4682B4	70,130,180
+ * silver 	 	#C0C0C0 192,192,192
+ * lightgray    #D3D3D3 211,211,211
+ * */
+#debug{ background: white; padding: 1px; font-family: Arial, "MS Trebuchet", sans-serif; font-weight: normal; }
+/* Contents, Headers and Subheaders Styles  Starts here */
+#logo{ width:30%; 
+       float:left; 
+       position: absolute; 
+       vertical-align:middle;
+}
+#logo img{ width:100%;}
+.adinfo{ width:69.9%; 
+		 float:left; 
+		 position: absolute;
+		 left:30%; 
+		 padding:0.1%;
+}
+#logo,.adinfo{ height: 111px; top:2%; }
+.addinfo p{ 
+	margin: 0 auto; 
+	display:inline-table;
+	position: relative;
+	width: 5%; 
+	padding:0.4%;
+}
+/*Login Styles*/
+.welcome{ 
+	width:98%; 
+	margin: 1px auto;
+	margin-left:11px;
+	padding:0.1em;
+	font-size:0.9em;
+    text-align:left;
+    color: rgb(70,130,180); 
+    font-weight: bold;
+}
+.welcome a{
+  color: rgb(70,130,180);
+  text-decoration:none;
+}
+/*Login Styles ends*/
+.imgholder { 
+     float:left;
+     width:72%;
+     margin:3px 10px .1px 1px; 
+     border: 1px rgba(30,144,255,0.5) solid;
+	border: 1px rgb(30,144,255) solid;
+	}
+.imgholder > img{
+	
+	padding: 5px 5px 0 5px;
+}
+
+.imgholder >.imgcap{ 
+	padding:3px;
+	width:auto;
+	background:rgba(0,0,0,0.6);
+	background: lightgrey;
+	
+}
+.imgholder >.imgcap { 
+	/*display:block;margin-top: 1em;*/
+	 
+	}
+.imgholder >.imgcap{
+    margin: 0 auto;
+}
+
+/*Pagination Styles */			 
+.pagination{  
+	padding:0.2em;
+	background:ivory; clear:both;	       
+}
+.pagination ul{
+	width:90%; 
+	margin: 2px auto;
+	}
+.pagination li{
+	       list-style: none;
+	       display: inline;
+	       text-align:center;
+}
+.pagination a{
+	    width:1em;
+	    padding:  0.2em 0.5em;
+	    margin: 0.01em 0.05em;
+	    /**/border:0.1em solid ivory;
+	    background: rgba(173,216,230,0.4);
+	    background: rgb(173,216,230);
+	  
+}
+.pagination a{
+	text-align:center;
+	font-size:0.95em;
+	font-weight:bold;
+	color:navy;
+	text-decoration: none;
+}
+.pagination a  span.enabled{
+	 /**/border:0.1em solid ivory;
+}
+.pagination  span.disabled{
+        width:1em;
+	    padding:  0.2em 0.5em;
+	    margin: 0.01em 0.04em;
+	    border:0.02em solid ivory;
+	    background: rgba(211,211,211,0.5);
+	    background: rgb(211,211,211);
+	    font-weight:bold;
+}
+.pagination span.disabled{
+	text-align:center;
+	font-size:0.95em;
+	color:ivory;
+}
+.pgofpg{   
+    float:right;
+    width:8em;
+	padding:  0.2em 0.5em;
+	margin:   0.2em 0.05em;
+	border:0.1em solid lightgray;
+	background: rgba(173,216,230,0.4);
+	background: rgb(173,216,230);
+  }
+.pgofpg{ 
+	text-align:center;
+	color: ivory;
+	font-weight:bold;
+}
+/*Pagination Styles ends*/
+
+/*CSS Rounded Corners Styles */
+.rounded_coners{
+	border-radius: 14px 14px;
+}
+.rounded_bottoms{
+	border-bottom-right-radius: 10px 10px;
+	border-bottom-left-radius:  10px 10px;
+}
+/*CSS Rounded Corners Styles ends */
+	
+/*CSS Hide and Show and trancparency Styles */
+.hide{ display:none;}
+.show{ display:block;}
+.isvisible{visibility:visible;}
+.not-visible{ visibility:hidden;}
+.addtransparency{ opacity:0.95; filter:alpha(opscity=95);}
+/*CSS Hide and Show Styles ends */
+		 	   
+/*\ IMAGE GALLERY CSS \*/
+
+/*\ IMAGE GALLERY CSS ENDS \*/
+
+
+

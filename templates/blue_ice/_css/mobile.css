@@ -1,0 +1,113 @@
+@charset "utf-8";
+/*Mobile layout styles */
+/* CSS Document 
+ * dodgerblue	#1E90FF	30,144,255
+ * navy		#000080	0,0,128
+ * powderblue	#B0E0E6	176,224,230
+ * royalblue	#4169E1	65,105,225
+ * skyblue	#87CEEB	135,206,235
+ * steelblue	#4682B4	70,130,180
+ * royalblue	#4169E1	65,105,225
+ * */
+html,body,div,nav, section,article,
+table,ol,ul,dl,dt,ul,
+h1,h2,h3,h4,h5,h6,p{margin:0; padding:0;}
+
+html{
+	background:url(../_images/bkgcolour.jpg) repeat;
+	opacity:.80;
+}
+body{
+	margin: 0 auto;	 
+}
+#wrapper{
+	border:1px solid #006; 
+	border-top:none; 
+	border-bottom:none;
+	border-top:none; 
+	background-color: rgba(255,255,255,0.96);
+	background-color: rgb(255,255,255);
+}
+#header{
+	background:url(../_images/headerbkg.png) repeat;
+	margin:0 auto;
+	border:0; 
+	height:120px;
+	position:relative;
+}
+
+#banner_rotator {
+	clear:both;
+	background:#F1F1F1;
+	margin: 0 auto; /**/
+	border: 2px  #FFF solid; 
+	height:100px;
+	display:none;
+}
+#menu_wrap{
+	border:1px solid #006;
+	width:100%; 
+	border:0;
+	background-image:url(../_images/menubkg.png);background-repeat:repeat;
+}
+a,a:link{ color:#03F; 
+        text-decoration: none;
+}
+a:active{ color:#06F;
+}
+a:hover{ text-decoration: underline;
+}
+#aside_left,#aside_right,#content{display:block;}
+#aside_left{
+	width:auto;
+	position:relative; 
+	margin-right:1.5%; 
+	padding: 0.5% .5% .5% .5%;
+	float:none; /**/
+	border: 1px solid green;
+}
+#aside_right{
+	width:auto;
+	position:relative;
+	margin-left:1%; 
+	padding: 0.5% 1% 0.5% 1%;
+	float:right; /**/
+	border: 1px solid red;
+}
+#content{
+	width:auto; 
+	position:relative;
+	padding:.5%;
+	margin: 0 auto;
+	border: 1px solid rgb(30,144,255);
+	/**/ 
+	border-bottom: none;
+}
+#footer{
+	clear:both; 
+	height:95px; 
+	margin: 0 auto;
+	background:rgba(10,90,250,0.95) url(../_images/footer_bkg.png) repeat-x; 
+	background:rgb(10,90,250) url(../_images/footer_bkg.png) repeat-x;
+	border:0; /**/
+}
+/*Global Styles */
+	
+#logo{ width:50px; 
+	  float:left; 
+	  position: absolute; 
+}
+#logo img{ width:100px;}
+#subheader{width:69.9%; 
+		 float:none;  
+		 padding:0.1%;
+		 border:1px solid red;
+}
+#logo,#subheader{ height: 95px; top:1%; }
+#subheader p{ 
+	margin: 0 auto; 
+	display:inline-table;
+	position: relative;
+	width: 48.5%; 
+	padding:0.4%;
+}	

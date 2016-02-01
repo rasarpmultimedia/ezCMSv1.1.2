@@ -1,0 +1,79 @@
+#formWrapper, #formWrapper .x-form {
+	margin: 0;
+	padding: 3px;
+	overflow: hidden;
+}
+#formWrapper h2,h3{
+	font-weight: bolder;
+	font-size: 1.2em;
+	margin-bottom:3px;
+}
+#formWrapper .x-form li > strong[role=agreement] {
+	font-weight:normal;
+	padding: 10px;
+}
+#formWrapper p:first-child{
+	width:80%;
+}
+
+#formWrapper > ol.x-form li >p{
+	padding: 2px;
+}
+#formWrapper > ol.x-form li{
+	 width:80%;
+	 list-style:none;	
+}
+#formWrapper input[type=radio],input[type=checkbox]{
+  margin-left:10px;
+  width: auto;
+  
+}
+#formWrapper li>p{
+	width:20px;
+	display:inline; 
+}
+.successmsg{
+    width:auto;
+	display:block; 
+	color:rgb(70,130,180);	
+}
+#formWrapper li>p.error,p.error{
+	width:auto;
+	display:block; 
+	color:rgb(255,0,0);
+}
+#formWrapper input,#formWrapper textarea[id=address]{
+	width:50%;
+	padding: 4px;
+}
+#formWrapper input,textarea,select{
+	border: 0.5px solid #dede;
+	margin-bottom:3px;
+}
+#formWrapper input,textarea{
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: normal;
+   font-size: 0.9em;
+}
+#formWrapper textarea{
+	width:inherit;
+	padding: 5px;
+}
+
+#formWrapper select{
+	padding: 5px;
+}
+#formWrapper label{
+	width:auto;
+	padding: 5px 0 2px;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+#formWrapper span>label{
+	font-weight: normal;
+	font-size: 1em;
+}
+#formWrapper input[type=submit]{
+	width:auto;
+    margin-top:5px;
+}

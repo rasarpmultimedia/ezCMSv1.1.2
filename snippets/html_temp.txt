@@ -1,0 +1,244 @@
+==================================================================================
+Display profile html code
+==================================================================================
+function viewProfile(){
+$output .= "<div id=\"admdetails\">";
+$output .= "<h2>Profile</h2>
+<h3>My Profile</h3>";
+//$output .= "<p style=\"color:red; margin-left: 2em;\">" ;
+// $$msg ="Your Profile has been successfully updated, thank you.";
+//$output .= isset($_GET["msg"])?${$_GET["msg"]}:'' ;
+// @$$changepass_msg ="Your password has been successfully changed.";
+//$output .= isset($_GET["changepass_msg"])?${$_GET["changepass_msg"]}:'' ;
+$editlink = GenerateUrl::buildLink(".","dashboard.php","action=edit,uid={$user->Userid}");
+$output .= <<<"HTML"
+      <table border="1" class="viewtable">
+        <tr>
+          <th colspan="3" scope="col">Personal Information</th>
+        </tr>
+        <tr class="ryt_align">
+     	<th colspan="6">editlink</th>
+        </tr>
+        <tr>
+          <th width="147" scope="row">Firstname:</th>
+          <td width="284"><?php echo $user->Firstname;?></td>
+          <td width="123" rowspan="4">Upload your picture here</td>
+        </tr>
+        <tr>
+          <th scope="row">Lastname:</th>
+          <td><?php echo $user->Lastname; ?></td>
+          </tr>
+        <tr>
+          <th scope="row">Gender:</th>
+          <td><?php echo $user->Gender; ?></td>
+        </tr>
+        <tr>
+          <th colspan="3"  scope="col">Login Information</th>
+         </tr>
+        <tr>
+          <th scope="row">Username:</th>
+          <td colspan="2" ><?php echo $user->Username; ?></td>
+        </tr>
+        <tr>
+          <th scope="row">Email:</th>
+          <td colspan="2" ><?php echo $user->Emailaddr; ?></td>
+        </tr>
+        <tr>
+          <th scope="row">Password:</th>
+          <td><?php echo $user->Password?"***********":''; ?></td>
+          <td><a href="../auth/changepass.php?id=<?php echo $user->Userid ?>" >Change Password</a></td>
+        </tr>
+       
+     
+HTML;
+$output .="<tr><th>Userlevel:</th><td>";
+          	 switch ($user->Authlevel) {
+				   case ADMIN:
+					   echo "Administrator";
+					   break;
+				   case EDITOR:
+					   echo "Editor"; 
+					   break;
+				   case USER:
+					   echo "User";
+					    break;
+				   default:
+					   echo"You are not suppose to be here";
+					   break;
+			   }
+
+$output .="</td></tr></table>
+</div></div> ";
+}
+==================================================================================
+covert the above to pages
+/* Page data: this returns html documments to sections on the page// */ 
+ $template->_get("Meta_Keywords", $meta_keyword);
+ $template->_get("Meta_Description", $meta_description);
+ $template->_get("Title", $page_title);
+ $template->_get("Image_Ads", $page_topimg);
+ $template->_get("Sub_Header_Region",$sub_header);
+ $template->_get("Horizontal_Nav", $page_nav);
+ $template->_get("Leaderboard_Banner",$page_banner);
+ $template->_get("Aside_Left",$page_aside_left);
+ $template->_get("Aside_Right",$page_aside_right);
+ $template->_get("Main_Content",$page_content );
+==================================================================================
+HTML Template
+================================================================================== 
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="{Meta_Keywords}" />
+<meta name="description" content="{Meta_Description}" />
+<meta name="author" content="Rasarp Multimedia Systems - Ghana" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+<link rel="stylesheet" media="screen,projection" href="templates/blue_ice/_css/main.css" />
+<!--[if IE]>
+<link href="templates/stylesheets/default/ie5+.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<script type="text/javascript" src=""> </script>
+<title>{Title}</title>
+</head>
+<body>
+<div id="wrapper">
+<!--// CONTENT HEADER //-->
+<div id="header">
+<div id="logo"><!--logo-->
+<img src="templates/blue_ice/_images/logo.png" alt="Logo" />
+</div>
+<div id="subheader">
+<!--Leaderboard banner here 600x250 (standard)-->
+<p class="img_rotator">{Image_Ads}</p>
+<p>{Sub_Header}</p>
+</div>
+</div>
+<!--//MENU OR NAV AREA//-->
+<div id="wrap_menu">
+{Horizontal_Nav}
+</div>
+<!--//MENU OR NAV AREA//-->
+<!--//BANNER AREA //-->
+<div id="crossbar">{Leaderboard_Banner}</div>
+<!--//BANNER AREA //-->
+<!--//SIDE BAR AREA //-->
+<div id="aside_left">{Aside_Left}</div>
+<div id="aside_right">{Aside_Right}</div>
+<!--//SIDE BAR AREA //-->
+<!--// CONTENT AREA STARTS//-->
+<div id="content">{Main_Content}</div>
+<!--// CONTENT AREA ENDS//-->
+<!--//FOOTER AREA //-->
+<div id="footer">{Footer}</div>
+</div>
+</body>
+</html>
+========================================================================
+Page Layout //Hompage 
+========================================================================
+<?php
+include_once"includes/initialize.inc.php";
+
+$title = "PowerCMS::Homepage";
+$nav = getPublicNavigation();
+$aside_left = <<<"_ASIDELEFT"
+<div class="flex_box quicklinks">
+<!-- Quick Links -->
+<h3>Quick Links </h3>
+<li><a href="#">Quick Link 1</a></li>
+<li><a href="#">Quick Link 2</a></li>
+<li><a href="#">Quick Link 3</a></li>
+<li><a href="#">Quick Link 4</a></li>
+<li><a href="#">Quick Link 5</a></li>
+<li><a href="#">Quick Link 6</a></li>
+</ul>
+<!-- Quick Links Ends-->
+</div>
+_ASIDELEFT;
+
+$aside_right = <<<"_ASIDERIGHT"
+ <!--Tab index Begins here-->
+ <div class="tab_wrapper">
+ <ul id="tabs">
+ <li><a href="#Jobs">News Jobs </a></li>
+ <li><a href="#Business">Business Directory</a></li></ul>
+  <div id="Jobs" class="tab_content">
+  Quisque orci orci, euismod sit amet, sollicitudin et,ullamcorper at, lorem</div>
+ <div id="Business" class="tab_content">
+  Quisque orci orci, euismod sit amet, sollicitudin et,ullamcorper at, lorem</div>
+ </div>  
+ <!--Tab index Ends here-->
+_ASIDERIGHT;
+//page contents starts here
+$contents = <<<"_PAGECONTENTS"
+ <div id ="homepage">
+  <!--CONTENT DIVISION ENDS -->
+<h2>Welcome to Sirenghana.com</h2>
+<!-- Dynamic Galary with Caption here -->
+<div class="flex_box">
+<h3>Latest News <span>Date:20th Sept 2013</span></h3>
+<ul>
+<li>
+	<h4><a href="#">Recent Update 1</a></h4>
+	<p>
+		<img src="pages/pageimgs/testimgs/peru.jpg" alt="peru" width="100" class="fleximg" />
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam iaculis vestibulum turpis.
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam iaculis vestibulum turpis.
+	</p>
+</li>
+<li><h4><a href="#">Recent Update 2</a></h4>
+	<p>
+		<img src="pages/pageimgs/testimgs/artic.jpg" alt="artic" width="100" class="fleximg" />
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam iaculis vestibulum turpis.
+	</p>
+</li></ul>
+</div>
+
+<div class="flex_box">
+<h3>Lastest Sports News <span>Date:</span></h3>
+<ul>
+	<li><h4><a href="#">Sports Update 2</a></h4>
+	<p>
+		<img src="pages/pageimgs/testimgs/australia.jpg" alt="australia" width="100" class="fleximg" />
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam iaculis vestibulum turpis.
+	</p>
+</li>
+<li><h4><a href="#">Sports  Update 2</a></h4>
+	<p>
+		<img src="pages/pageimgs/testimgs/croatia.jpg" alt="croatia" width="100" class="fleximg" />
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam iaculis vestibulum turpis.
+	</p>
+</li>
+</ul>
+</div>
+<!--Ad_holder Starts here-->
+<div class="clear_left adplaceholder">
+ <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Nullam iaculis vestibulum turpis. Ad holder</p>
+</div>
+<!--Ad_holder Ends-->
+<div class="flex_box">
+<h3>Lastest Jobs Online<span>Date:</span></h3>
+<ul><li>
+<h4><a href="#">Jobs Title 1</a></h4>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam iaculis vestibulum turpis.</p>
+</li>
+<li><h4><a href="#">Jobs Title 1</a></h4>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Nullam iaculis vestibulum turpis.</p>
+</li></ul>
+</div>
+<div class="flex_box">
+<h3>Sports News <span>Date:</span></h3>
+<p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Nullam iaculis vestibulum turpis.</p>
+</div>
+
+<!--CONTENT DIVISION ENDS -->
+ </div>
+_PAGECONTENTS;
+$template->getTempaltePath = TEMPLATE_DIR.SITE_TEMPLATE."/_html/layout.tpl.htm";
+$template->getPage($title,$nav,$aside_left,$contents,$aside_right);
+
+

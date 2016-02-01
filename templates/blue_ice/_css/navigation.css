@@ -1,0 +1,78 @@
+/* CSS for Menu items */
+#wrap_menu,ul#navigation{ 
+    width:100%;
+    margin: 0 auto;  
+    background:url(../_images/menubkg.png) repeat-x ; 
+    position:relative;  
+    float:left; 
+}		  
+/**Styling level 0 navigation list */
+ul#navigation li{   
+	list-style:none; 
+	display:inline-block;
+}
+
+ul#navigation a{ 
+				 width:5em; 
+				 padding:.4em .3em; 
+				 display:block;
+				 border: 0;
+}
+
+
+#navigation a{ 
+				 color:#FFF; 
+				 font-size:1.2em;   
+				 font-family: Arial, Georgia;
+				 font-weight:bolder;
+                 text-align: center;
+				 text-decoration:none;
+}
+
+#navigation a:hover{ 
+					   background: url(../_images/menu_hover.png); 
+					   color: #F90;
+				   }
+
+/**Styling level 0 and 1 navigation list - Javascript Disabled */
+/**-- Dropdown list -- **/
+/**
+Positioning the ul and li for pop up and dropdowns
+*/
+#navigation ul{
+				float:none;
+			  }
+#navigation ul li{ 
+				   width:auto; 
+				   border-top: 0px solid lightblue; 
+				 }
+#navigation ul a{ 
+					width:12.4em; 
+					w\idth:12.8em;
+					background: url(../_images/menu_hover.png) repeat-x;
+					font-size: 1em; 
+					text-align: left; 
+} 
+ul#navigation li{ 
+				  position: relative; 
+				  z-index:30; }
+				  
+#navigation ul{ position: absolute;}
+#navigation ul ul{ 
+					 left:95%; 
+					 top:0; 
+}
+/*
+Hiding and Revealing left:-99999px;
+**/
+#navigation ul, 
+#navigation li:hover ul ul,
+#navigation ul li:hover ul ul
+{ display:none;}
+
+#navigation li:hover ul,
+#navigation ul li:hover ul,
+#navigation ul ul li:hover ul
+{ display:block; }
+
+/*/ Vertical Navigation or Side Navigation Here \*/
